@@ -25,7 +25,7 @@ public class PassengersGenerator extends Thread {
             "Валентина", "Влад", "Евгения", "Кристина"
     ));
 
-    Random random = new Random(78);
+    Random random = new Random( System.currentTimeMillis());
 
     @Override
     public void run(){
@@ -33,7 +33,7 @@ public class PassengersGenerator extends Thread {
         while (true){
             try{
                 sleep((60*1000)/passengersSpeed);		//Приостанавливает поток на 1 секунду
-            }catch(InterruptedException e){}
+            }catch(InterruptedException ignored){}
 
             boolean randomPassengerFlag = random.nextBoolean();
 
@@ -42,7 +42,7 @@ public class PassengersGenerator extends Thread {
 
                 Passenger tmp = new Passenger(namesList.get(randomIndexName));
                 passengersQueue.add(tmp);
-                //System.out.println("PassengersGenerator arrived: " + namesList.get(randomIndexName));
+                System.out.println("PassengersGenerator arrived: " + namesList.get(randomIndexName));
             }
 
         }

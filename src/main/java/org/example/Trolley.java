@@ -1,26 +1,22 @@
 package org.example;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Random;
-
 import static org.example.Main.*;
 
 public class Trolley extends Thread{
 
     @Override
     public void run() {
-        Random random = new Random(79);
+        //Random random = new Random( System.currentTimeMillis());
+
         while (true){
-            try{
-                if (!currentPersonCollect.isEmpty()){
-                    System.out.println("Поезд поехал с :"+ currentPersonCollect);
-                    sleep((trolleyDuration*5*1000)/passengersSpeed);		//Приостанавливает поток на 1 секунду
-                    currentPersonCollect.clear();
-                }
-            }catch(InterruptedException e){}
 
-
+            if (!Main.currentPersonCollect.isEmpty()){
+                //System.out.println("!Main.currentPersonCollect.isEmpty: "+!Main.currentPersonCollect.isEmpty());
+                System.out.println("Поезд отправляется");
+                try{sleep(((long) trolleyDuration *5*1000));
+                }catch(InterruptedException ignored){}
+                Main.currentPersonCollect.clear();
+            }
         }
     }
 }

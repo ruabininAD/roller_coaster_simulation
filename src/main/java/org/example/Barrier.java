@@ -6,7 +6,7 @@ import static org.example.Main.*;
 
 public class Barrier extends Thread{
     int capacity;
-    LinkedList<Passenger> lastCollection = new LinkedList<>();
+    public static LinkedList<Passenger> lastCollection = new LinkedList<>();
 
     public Barrier( int M) {
         this.capacity = M;
@@ -18,7 +18,7 @@ public class Barrier extends Thread{
         while (true){
             try{
                 sleep((60*1000)/barrierSpeed);		//Приостанавливает поток на 1 секунду
-            }catch(InterruptedException e){}
+            }catch(InterruptedException ignored){}
 
 
             if (lastCollection.size()==capacity){
