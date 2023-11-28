@@ -48,10 +48,5 @@ public class VariablesGUI extends JFrame {
         timer.start();
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            VariablesGUI gui = new VariablesGUI();
-            gui.setVisible(true);
-        });
-    }
+
 }

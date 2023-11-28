@@ -20,7 +20,7 @@ public class Barrier extends Thread{
                 sleep((60*1000)/barrierSpeed);
             }catch(InterruptedException ignored){}
             if (lastCollection.size()==capacity){
-                collectList.add(new LinkedList<>(lastCollection)); //передача по значению
+                collectList.add(new LinkedList<>(lastCollection));
                 lastCollection.clear();
             } else {
                 Passenger person = passengersQueue.poll();

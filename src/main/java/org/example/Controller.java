@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.LinkedList;
 
 import static org.example.Main.barrierSpeed;
 

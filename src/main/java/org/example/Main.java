@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 
-import static java.lang.Thread.sleep;
+
 
 
 public class Main {
@@ -18,7 +18,7 @@ public class Main {
 
     public static final int passengersSpeed = 160;// persons in min
     public static  final int barrierSpeed = 1600;// persons in min
-    public static final int trolleyDuration = 10000 ;//секунд *10 группа катается на горках
+    public static final int trolleyDuration = 10000 ;
     public  static final int trolleyCapacity = 5 ;
 
 

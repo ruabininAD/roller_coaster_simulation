@@ -32,7 +32,7 @@ public class PassengersGenerator extends Thread {
 
         while (true){
             try{
-                sleep((60*1000)/passengersSpeed);		//Приостанавливает поток на 1 секунду
+                sleep((60*1000)/passengersSpeed);
             }catch(InterruptedException ignored){}
 
             boolean randomPassengerFlag = random.nextBoolean();
