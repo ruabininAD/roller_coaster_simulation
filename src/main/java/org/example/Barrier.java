@@ -17,13 +17,9 @@ public class Barrier extends Thread{
 
         while (true){
             try{
-                sleep((60*1000)/barrierSpeed);		//Приостанавливает поток на 1 секунду
+                sleep((60*1000)/barrierSpeed);
             }catch(InterruptedException ignored){}
-
-
             if (lastCollection.size()==capacity){
-                //System.out.println("lastCollection size:"+ lastCollection.size());
-
                 collectList.add(new LinkedList<>(lastCollection)); //передача по значению
                 lastCollection.clear();
             } else {
