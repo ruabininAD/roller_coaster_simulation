@@ -10,12 +10,16 @@ public class Trolley extends Thread{
 
         while (true){
 
-            if (!Main.currentPersonCollect.isEmpty()){
-                //System.out.println("!Main.currentPersonCollect.isEmpty: "+!Main.currentPersonCollect.isEmpty());
-                System.out.println("Поезд отправляется");
-                try{sleep(((long) trolleyDuration *5*1000));
-                }catch(InterruptedException ignored){}
-                Main.currentPersonCollect.clear();
+            synchronized (Main.currentPersonCollect) {
+                if (!Main.currentPersonCollect.isEmpty()) {
+                    System.out.println("Поезд отправляется");
+                    try {
+                        sleep(( trolleyDuration ));
+                    } catch (InterruptedException ignored) {
+                        Thread.currentThread().interrupt();
+                    }
+                    Main.currentPersonCollect.clear();
+                }
             }
         }
     }

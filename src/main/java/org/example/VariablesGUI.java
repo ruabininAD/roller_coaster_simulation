@@ -35,7 +35,7 @@ public class VariablesGUI extends JFrame {
         setContentPane(panel);
 
         // Запуск таймера для обновления значений переменных каждую секунду
-        Timer timer = new Timer(100, new ActionListener() {
+        Timer timer = new Timer(10, new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
